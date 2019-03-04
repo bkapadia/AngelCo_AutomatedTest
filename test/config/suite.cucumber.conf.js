@@ -31,49 +31,8 @@ exports.config = {
 
           {
               browserName: 'chrome',
-              // platform: 'Windows 10',
-              // version: '50.0',
-              maxInstances: '5',
+              maxInstances: '1',
           },
-          //
-          // {
-          //     browserName: 'firefox',
-          //     // platform: 'Windows 10',
-          //     // version: '50.0',
-          //     maxInstances: '5',
-          // },
-
-          // {
-          //     browserName: 'safari',
-          //     // platform: 'Windows 10',
-          //     // version: '50.0',
-          //     maxInstances: '5',
-          // },
-          //
-          // {
-          //     browserName: 'internet explorer',
-          //     platform: '',
-          //     version: '',
-          //     acceptUntrustedCertificates: true,
-          //     ignoreProtectedModeSettings: true,    //only applicable to IE browser
-          //     ignoreZoomSetting: true,              //only applicable to IE browser
-          //     ensureCleanSession: true,
-          //     maxInstances: '5',
-          //     // specs: [
-          //     //     './test/specs/*.js'
-          //     // ],
-          // },
-
-          // {
-          //     browserName: 'phantomjs',
-          //     platform: '',
-          //     version: '',
-          //     maxInstances: '5',
-          //
-          //     //  specs: [
-          //     //    './test/specs/*.js'
-          //     //  ],
-          // },
           //
           // {
           //     browserName: 'chrome',
@@ -91,15 +50,6 @@ exports.config = {
           //     //     './test/specs/*.js'
           //     // ],
           // },
-          //
-          // {
-          //     browserName: 'firefox',
-          //     // platform: 'Windows 10',
-          //     // version: '50.0',
-          //     maxInstances: '5',
-          //     // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-          //     "moz:firefoxOptions": { args: ['-headless'] }
-          // },
     ],
     //
     // ===================
@@ -111,7 +61,7 @@ exports.config = {
     // the wdio-sync package. If you still want to run your tests in an async way
     // e.g. using promises you can set the sync option to false.
     sync: true,
-    logLevel: 'silent',     // Level of logging verbosity: silent | verbose | command | data | result | error
+    logLevel: 'verbose',     // Level of logging verbosity: silent | verbose | command | data | result | error
     coloredLogs: true,      // Enables colors for log output.
     screenshotPath: './test/reports/errorShots/',   // Saves a screenshot to a given path if a command fails.
     //
@@ -200,8 +150,6 @@ exports.config = {
     //
     //
     // beforeFeature: function (feature) {
-    //     //do your stuff
-    // },
     //
     // afterFeature: function (feature) {
     //     //do your stuff
