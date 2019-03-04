@@ -2,8 +2,6 @@
 import { defineSupportCode } from 'cucumber';
 import angeloCo from '../pageobjects/home.page';
 
-module.exports = new Promise(function(resolve, reject) {
-  // async code here;
 defineSupportCode(function({ When }) {
 
   When(/I am on Angellist homepage/, function() {
@@ -25,8 +23,13 @@ defineSupportCode(function({ When }) {
   When(/^I login with username and password "([^"]*)" into the text box$/, function(arg1) {
     angeloCo.register(arg1);   
   });
+  
+  When(/^I select forgot password$/, function() {
+    angeloCo.forgotPassword();   
+  });
 
-  When(/^I am logged in and I click on logout$/, function(arg1) {
+
+  When(/^I am logged in and I click on logout$/, function() {
     angeloCo.logout();   
   });
 
@@ -34,23 +37,29 @@ defineSupportCode(function({ When }) {
     angeloCo.signinValid(arg1);   
   });
 
-  When('I go to Angellist login page', function(callback) {
-    this.browser
-    .click("auth.login")
-    .getTitle().should.equal('Log In - AngelList').catch (function(err){
-      console.log(err)
-    })
-  })
-  
-  // When(/^I go to Angellist login page$/, function(arg1) {
-  //   angeloCo.login();   
-  // });
+  When(/^I enter invalid credentials$/, function() {
+    angeloCo.signinInValid();   
+  });
 
-  When(/^I enter existing valid credentials$/, function(arg1) {
+  When(/^I go to Angellist login page$/, function() {
+    angeloCo.login();   
+  });
+
+  When(/^I enter existing valid credentials$/, function() {
     angeloCo.signinExisting();   
   });
   
-  
-});
 
+  When(/^I enter valid email$/, function() {
+    angeloCo.validEmailReset(); 
+  });
+
+  When(/^I enter invalid email$/, function() {
+    angeloCo.inValidEmailReset(); 
+  });
+  
+
+
+
+  
 });
