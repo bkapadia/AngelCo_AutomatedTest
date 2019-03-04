@@ -1,4 +1,4 @@
-Feature: Test forgot password feature
+Feature: Test forgot password feature is successful
 
     As an existing user of Angel.co
     I want to test if password reset works

@@ -61,7 +61,7 @@ exports.config = {
     // the wdio-sync package. If you still want to run your tests in an async way
     // e.g. using promises you can set the sync option to false.
     sync: true,
-    logLevel: 'verbose',     // Level of logging verbosity: silent | verbose | command | data | result | error
+    logLevel: 'silent',     // Level of logging verbosity: silent | verbose | command | data | result | error
     coloredLogs: true,      // Enables colors for log output.
     screenshotPath: './test/reports/errorShots/',   // Saves a screenshot to a given path if a command fails.
     //

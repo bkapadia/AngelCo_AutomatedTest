@@ -1,4 +1,4 @@
-Feature: Register an accout to Angel.co
+Feature: Create an account and succesfully register to Angel.co
 # THIS TEST WILL FAIL IF angel.co DETECTS THAT IT'S AN AUTOMATED TEST
 # AFTER SEVERAL RUNS CATPCHA MIGHT BE INITIATED TO BLOCK REGISTRATION
 

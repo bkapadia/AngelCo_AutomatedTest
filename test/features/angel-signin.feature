@@ -1,4 +1,4 @@
-Feature: Test login feature of angel.co/login website
+Feature: Test login feature of angel.co/login website is successful
 
     As an existing user of  Angel.co
     I want to test my login credentials

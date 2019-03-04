@@ -1,4 +1,4 @@
-Feature: Test forgot password feature is sucessful
+Feature: Test forgot password feature is unsucessful
 
     As an non-existing user of Angel.co
     I want to test if password reset does not works
