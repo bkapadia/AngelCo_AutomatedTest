@@ -14,6 +14,7 @@
     "assert": "^1.4.1",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
+    "bluebird": "3.5.3",
     "casual": "1.5.19",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
@@ -29,7 +30,7 @@
     "wdio-dot-reporter": "0.0.5",
     "wdio-json-reporter": "^0.1.1",
     "wdio-junit-reporter": "0.0.2",
-    "wdio-spec-reporter": "^0.1.2",
+    "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.14.2"
   },
   "devDependencies": {
@@ -39,7 +40,7 @@
     "wdio-screenshot": "^0.5.0",
     "wdio-selenium-standalone-service": "^0.0.10",
     "eslint": "^1.10.3",
-    "superagent": "3.5.2",
+    "superagent": ">=3.7.0",
     "eslint-config-airbnb-base": "11.0.1",
     "babel-eslint": "7.1.1",
     "grunt-cli": "^0.1.13",
@@ -53,7 +54,14 @@
   },
   "babel": {
     "presets": [
-      ["env", { "targets": {"node": "current"}}]
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ]
   }
 }
