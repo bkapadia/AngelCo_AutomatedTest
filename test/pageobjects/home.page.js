@@ -82,7 +82,6 @@ class angelCo extends Page  {
   loginVerify(){
     browser.pause(1000); //need pause for expect statement else it wait indefinitely with the "waitForVisible" method
     expect(browser.isVisible(".logout-link")).to.be.true;
-
   }
 
   loginUnableVerify(){

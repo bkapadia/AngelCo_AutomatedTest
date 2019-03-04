@@ -8,7 +8,8 @@ I have made it so each feature file runs one at a time, it is possible to run al
 
 Requirements: 
 ***Node v10.15.1***
-***Chrome browser***
+***NPM v6.4.1***
+***Chrome browser(latest)***
 
 To run test:
 ***npm install***

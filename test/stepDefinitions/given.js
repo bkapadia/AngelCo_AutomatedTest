@@ -8,4 +8,3 @@ defineSupportCode(function({ Given }) {
     angelCo.open();
   });
 });
-
