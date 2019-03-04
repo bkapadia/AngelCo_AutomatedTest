@@ -26,6 +26,7 @@ defineSupportCode(function({ Then }) {
   Then(/^I see that reset was unsuccessful$/, function() {
     angelCo.resetFailure();
   });
+
   Then(/^I should see that I am registered$/, function() {
     angelCo.validRegister()();
   });

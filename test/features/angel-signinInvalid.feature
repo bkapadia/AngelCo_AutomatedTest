@@ -1,4 +1,4 @@
-Feature: Test login failure feature of angel.co/login website
+Feature: Test login feature is unsuccessful
 
     As an non- existing user of Angel.co
     I enter invalid signin credentials

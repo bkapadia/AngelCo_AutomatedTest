@@ -28,7 +28,6 @@ defineSupportCode(function({ When }) {
     angeloCo.forgotPassword();   
   });
 
-
   When(/^I am logged in and I click on logout$/, function() {
     angeloCo.logout();   
   });
@@ -49,7 +48,6 @@ defineSupportCode(function({ When }) {
     angeloCo.signinExisting();   
   });
   
-
   When(/^I enter valid email$/, function() {
     angeloCo.validEmailReset(); 
   });
@@ -57,9 +55,4 @@ defineSupportCode(function({ When }) {
   When(/^I enter invalid email$/, function() {
     angeloCo.inValidEmailReset(); 
   });
-  
-
-
-
-  
 });
