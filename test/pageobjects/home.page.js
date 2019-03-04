@@ -12,15 +12,11 @@ class angelCo extends Page  {
     browser.pause(1000); //allow time to load page
     if(browser.isVisible(".cookie-consent-banner")){
       browser.click(".c-button.js-accept");
-      browser.pause(1000);
-      browser.click("//a['.Join']");
     }
-    browser.waitForVisible(".header_nav");
-    browser.getTitle().should.equal('AngelList - Where the world meets startups');
   }
 
   join(){
-    browser.click("//a['.Join']");
+    Page.clickWhenVisible("//a['.Join']");
   }
 
   signupPage(){
@@ -32,7 +28,7 @@ class angelCo extends Page  {
   }
 
   register(arg1){
-    var blocker = "!!!!!This can not be tested due to captcha block!!!!"
+    var blocker = "!!!!!This can not be tested due to captcha block!!!!" //THIS IS A BLOCKER IF SITE HAS INITIATED CAPTCHA 
     browser.setValue("#user_name",user1 +' '+ user1);
     browser.setValue("#user_email",user1+arg1);
     browser.setValue("#user_password","password"+user1);
@@ -43,21 +39,26 @@ class angelCo extends Page  {
 
   submit(){
     browser.click("//input[@type='submit']");
-    browser.getText(".top_title").should.equal(`Welcome to AngelList, ${user1}!`);
   }
 
-  signout(){
-    browser.pause(2000);
+  validRegister(){
+    browser.getText(".top_title").should.equal(`Welcome to AngelList, ${user1}!`);
+  }
+  logout(){
+    browser.pause(2000);// will wait indefinitely if "if" statement has "waitForVisible" so need to use pause instead
     if (browser.isVisible(".logout-link")){
     Page.clickWhenVisible(".logout-link");
     }
-
   }
 
   login(){
-    browser.click("auth.login");
-    //Page.clickWhenVisible(".auth.login").then();
-    browser.getTitle().should.equal('Log In - AngelList');
+    if(browser.isVisible(".cookie-consent-banner")){
+      browser.click(".c-button.js-accept");
+    }
+    browser.pause(2000);//time to open browser
+    Page.clickWhenVisible(".auth.login");
+    //browser.url('https://angel.co/login');
+    browser.pause(2000); //time to load page
   }
 
   signinInValid(arg1){
@@ -77,9 +78,38 @@ class angelCo extends Page  {
     browser.setValue("#user_email", "koho@koho.com");
     browser.setValue("#user_password","koho_bhavin");
   }
-  
-  submitLogin(){
-    Page.clickWhenVisible("//input[@type='submit']");
+
+  loginVerify(){
+    browser.pause(1000); //need pause for expect statement else it wait indefinitely with the "waitForVisible" method
+    expect(browser.isVisible(".logout-link")).to.be.true;
+
+  }
+
+  loginUnableVerify(){
+    browser.pause(1000); //need pause for assertion for expect method
+    expect(browser.isVisible(".logout-link")).to.be.false;
+  }
+
+  forgotPassword(){
+    Page.clickWhenVisible(".js-forgot_password");
+  }
+
+  validEmailReset(){
+    browser.setValue("#user_email", "koho@koho.com");
+  }
+
+  inValidEmailReset(){
+    browser.setValue("#user_email",user1+"@bademailtest.com");
+  }
+
+  resetFailure(){
+    browser.pause(2000); //need pause for assertion for expect method
+    expect(browser.isVisible(".validation-error")).to.be.true;
+  }
+
+  resetSuccess(){
+    browser.pause(2000); //need pause for assertion for expect method
+    expect(browser.isVisible(".validation-error")).to.be.false;
   }
 }
 
